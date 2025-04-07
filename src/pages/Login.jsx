@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { db } from "../firebase";
 import { doc, setDoc, deleteDoc, getDoc } from "firebase/firestore";
 import logo from "../assets/images/logo.png";
@@ -18,6 +18,15 @@ function Login() {
     const navigate = useNavigate();
 
     const generateOtp = () => Math.floor(1000 + Math.random() * 9000).toString();
+
+
+    useEffect(() => {
+        const user = JSON.parse(localStorage.getItem("user"));
+        if (user && user.role) {
+            navigate(`/${user.role}`);
+        }
+    }, [navigate]);
+
 
     const sendOtp = async () => {
         if (!role || !phone) return alert("Please select role and enter phone");
@@ -90,13 +99,17 @@ function Login() {
                 return;
             }
 
-            const data = docSnap.data();
+            const data = docSnap.data(); // 👈 Now data is defined here!
 
             if (data.otp === enteredOtp) {
-                navigate(`/${role}`); // 👈 Redirect based on role
+                // 👉 Store user state
+                const userData = { phone, role };
+                localStorage.setItem("user", JSON.stringify(userData));
+                navigate(`/${role}`);
             } else {
                 setShowResend(true); // Show resend option
             }
+
         } catch (error) {
             console.error("Error verifying OTP:", error);
             alert("Failed to verify OTP");
@@ -105,6 +118,7 @@ function Login() {
 
         setVerifying(false);
     };
+
 
 
     return (

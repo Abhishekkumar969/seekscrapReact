@@ -1,12 +1,21 @@
-import React from "react";
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
-function SellerPage() {
+const SellerPage = () => {
+    const navigate = useNavigate();
+
+    const logout = () => {
+        localStorage.removeItem("user");
+        navigate("/login");
+    };
+
     return (
-        <div style={{ padding: "20px" }}>
-            <h1>Welcome Seller 🛒</h1>
-            <p>This is the seller dashboard.</p>
+        <div className="container">
+            <h1 className="heading">Welcome Seller 🛒</h1>
+            <p className="description">This is the seller dashboard.</p>
+            <button onClick={logout}>Logout</button>
         </div>
     );
-}
+};
 
 export default SellerPage;

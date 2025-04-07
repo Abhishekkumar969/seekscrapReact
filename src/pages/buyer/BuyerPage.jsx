@@ -1,12 +1,21 @@
-import React from "react";
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
-function BuyerPage() {
+const BuyerPage = () => {
+    const navigate = useNavigate();
+
+    const logout = () => {
+        localStorage.removeItem("user");
+        navigate("/login");
+    };
+
     return (
-        <div style={{ padding: "20px" }}>
-            <h1>Welcome Buyer 👤</h1>
-            <p>This is the buyer dashboard.</p>
+        <div className="container">
+            <h1 className="heading">Welcome Buyer 👤</h1>
+            <p className="description">This is the buyer dashboard.</p>
+            <button onClick={logout}>Logout</button>
         </div>
     );
-}
+};
 
 export default BuyerPage;
