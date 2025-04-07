@@ -1,0 +1,14 @@
+.loaderContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(160deg, #f3d06d 20%, #efbc41 80%);
+}
+
+.loaderLogo {
+    width: 300px;
+    height: 300px;
+    border-radius: 10px;
+    object-fit: contain;
+}

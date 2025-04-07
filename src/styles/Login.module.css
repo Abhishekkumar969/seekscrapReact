@@ -1,0 +1,316 @@
+.container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 60px;
+    background: linear-gradient(100deg, #f3d06d 20%, #efbc41 80%);
+    color: black;
+    font-family: "Arial", sans-serif;
+}
+
+.helpButton {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    border: 1px solid black;
+    padding: 6px 14px;
+    border-radius: 8px;
+    font-size: 14px;
+    cursor: pointer;
+    background: transparent;
+    color: black;
+    border: 2px solid rgba(255, 255, 255, 0.582);
+    box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.3);
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.1), rgba(0, 0, 0, 0.1));
+    transition: transform 0.1s ease, box-shadow 0.1s ease;
+}
+
+.helpButton:active {
+    transform: translateY(2px);
+    box-shadow: 0px 0px 0 rgba(0, 0, 0, 0.2);
+}
+
+.logo {
+    width: 300px;
+    max-width: 80%;
+}
+
+.row {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 20px;
+    border-radius: 10px;
+    font-size: 25px;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+    min-width: 130px;
+    border: 2px solid rgba(255, 255, 255, 0.685);
+    box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.3);
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.1), rgba(0, 0, 0, 0.1));
+    transition: transform 0.1s ease, box-shadow 0.1s ease;
+}
+
+.button:active {
+    transform: translateY(2px);
+    box-shadow: 0px 0px 0 rgba(0, 0, 0, 0.2);
+}
+
+.seller {
+    background-color: #F7941D;
+}
+
+.buyer {
+    background-color: #1B998B;
+}
+
+.collector {
+    background-color: #065A82;
+    padding: 12px 40px;
+}
+
+.icon {
+    width: 25px;
+    height: 25px;
+    margin-right: 10px;
+}
+
+.hintBox {
+    padding: 16px;
+    border-radius: 10px;
+    margin-top: 30px;
+    width: 85%;
+    max-width: 400px;
+}
+
+.hintText {
+    font-size: 14px;
+    margin-bottom: 6px;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.inputContainer {
+    width: 85%;
+    max-width: 400px;
+    margin-top: 15px;
+}
+
+.input {
+    width: 100%;
+    background-color: white;
+    color: black;
+    font-size: 16px;
+    padding: 12px 15px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    border: none;
+}
+
+.phoneContainer {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    border-radius: 8px;
+    padding: 10px;
+    margin-bottom: 15px;
+}
+
+.countryCode {
+    font-weight: bold;
+    font-size: 16px;
+    color: black;
+    margin-right: 10px;
+}
+
+.phoneInput {
+    border: none;
+    outline: none;
+    flex: 1;
+    font-size: 16px;
+    color: black;
+    background: none;
+}
+
+.terms {
+    font-size: 12px;
+    margin-top: 8px;
+    color: white;
+}
+
+.link {
+    color: lightgreen;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+
+/*  */
+
+.inputContainer {
+    /* width: 85%;
+    max-width: 400px; */
+    /* margin-top: 40px; */
+    /* background: rgba(255, 255, 255, 0.15); */
+    padding: 0px 20px;
+    /* border-radius: 14px; */
+    /* box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2); */
+    /* backdrop-filter: blur(6px); */
+}
+
+.subtitle {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: black;
+}
+
+.phoneContainer {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    border-radius: 10px;
+    padding: 12px 16px;
+    margin-bottom: 20px;
+    box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.countryCode {
+    font-weight: bold;
+    font-size: 16px;
+    color: black;
+    margin-right: 12px;
+}
+
+.phoneInput {
+    border: none;
+    outline: none;
+    flex: 1;
+    font-size: 16px;
+    color: black;
+    background: transparent;
+    padding: 8px 0;
+}
+
+.terms {
+    font-size: 15px;
+    margin-top: 8px;
+    color: black;
+    line-height: 1.5;
+}
+
+.link {
+    color: #0c8002;
+    font-weight: bold;
+    cursor: pointer;
+    /* text-decoration: underline; */
+}
+
+.continueButton {
+    background-color: white;
+    color: #08776E;
+    font-weight: bold;
+    padding: 14px;
+    border-radius: 10px;
+    width: 100%;
+    margin-top: 80px;
+    cursor: pointer;
+    font-size: 18px;
+    border: 2px solid #ddd;
+    box-shadow: 0 4px 0 rgba(0, 0, 0, 0.25);
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.continueButton:active {
+    transform: translateY(2px);
+    box-shadow: 0 2px 0 rgba(0, 0, 0, 0.2);
+}
+
+
+/*  */
+
+.editText {
+    font-size: 14px;
+    margin-bottom: 16px;
+    color: black;
+}
+
+.phoneNumber {
+    color: #19d78b;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.otpBoxes {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.otpInput {
+    width: 48px;
+    height: 48px;
+    font-size: 22px;
+    text-align: center;
+    border-radius: 10px;
+    border: 2px solid #ccc;
+    background: white;
+    color: black;
+    font-weight: bold;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+.otpInfo {
+    font-size: 13px;
+    margin-bottom: 10px;
+}
+
+.resendText {
+    font-size: 13px;
+    margin-bottom: 20px;
+}
+
+.resendLink {
+    color: #ff0000;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+
+/* Responsive tweaks */
+
+@media (max-width: 480px) {
+    .subtitle {
+        font-size: 27px;
+        margin-bottom: 30px;
+        font-weight: bold;
+        text-align: center;
+    }
+    .button {
+        min-width: 100px;
+        font-size: 20px;
+    }
+    .hintBox {
+        font-size: 13px;
+    }
+    .inputContainer {
+        margin-top: 20px;
+    }
+    .continueButton {
+        font-size: 16px;
+        padding: 12px;
+    }
+}
