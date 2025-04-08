@@ -11,7 +11,8 @@ function Home() {
 
         const timer = setTimeout(() => {
             if (user && user.role) {
-                navigate(`/${user.role}`);
+                navigate(`/${user.role}`, { replace: true });
+
             } else {
                 navigate("/login");
             }

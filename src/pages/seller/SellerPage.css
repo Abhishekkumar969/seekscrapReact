@@ -1,0 +1,154 @@
+    .container {
+        font-family: sans-serif;
+        padding-bottom: 80px;
+        background-color: white;
+    }
+    
+    .topBar {
+        display: flex;
+        align-items: center;
+        padding: 10px 20px;
+        background: linear-gradient(180deg, #f3d06d 20%, #efbc41 80%);
+        color: green;
+        position: sticky;
+        top: 0;
+        z-index: 10;
+    }
+    
+    .menuBtn {
+        font-size: 30px;
+        background: none;
+        border: none;
+        color: green;
+        position: absolute;
+        top: 19px;
+        border-radius: 10px;
+        border: 1px solid #ffffff98;
+        box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.096);
+        background: linear-gradient(to bottom, rgba(255, 255, 255, 0.1), rgba(0, 0, 0, 0.1));
+        transition: transform 0.1s ease, box-shadow 0.1s ease;
+    }
+    
+    .menuBtn:active {
+        transform: translateY(2px);
+        box-shadow: 0px 0px 0 rgba(0, 0, 0, 0.2);
+    }
+    
+    .locationContainer {
+        display: flex;
+        align-items: center;
+        padding: 10px 20px;
+        border-radius: 22px;
+        justify-content: center;
+        margin: auto;
+        border-radius: 10px;
+        border: 1px solid #ffffff98;
+        box-shadow: 4px 4px 3px rgba(0, 0, 0, 0.103);
+        background: linear-gradient(to bottom, rgba(255, 255, 255, 0.1), rgba(0, 0, 0, 0.068));
+        transition: transform 0.1s ease, box-shadow 0.1s ease;
+    }
+    
+    .locationContainer:active {
+        transform: translateY(4px);
+        box-shadow: 0px 0px 0 rgba(0, 0, 0, 0.2);
+    }
+    
+    .locationIcon {
+        font-size: 28px;
+        margin-right: 10px;
+    }
+    
+    .locationText h3 {
+        margin: 0;
+        font-size: 18px;
+    }
+    
+    .locationText p {
+        margin: 0;
+        font-size: 14px;
+    }
+    
+    .banner {
+        display: flex;
+        justify-content: center;
+        padding: 20px;
+        background: linear-gradient(260deg, #f3d06d 20%, #efbc41 80%);
+    }
+    
+    .logo {
+        max-width: 300px;
+        height: auto;
+    }
+    
+    .centerBtn {
+        text-align: center;
+        margin: 10px 0;
+    }
+    
+    .scrollBtn {
+        color: white;
+        border: none;
+        padding: 10px 25px;
+        font-size: 20px;
+        border-radius: 35px;
+        cursor: pointer;
+        font-weight: bold;
+        border-radius: 10px;
+        box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.116);
+        background: linear-gradient(180deg, #f3d06d 20%, #efbc41 80%);
+        transition: transform 0.1s ease, box-shadow 0.1s ease;
+    }
+    
+    .scrollBtn:active {
+        transform: translateY(5px);
+        box-shadow: 0px 0px 0 rgba(0, 0, 0, 0.2);
+    }
+    
+    .buyersList {
+        padding: 20px;
+    }
+    
+    .buyerCard {
+        display: flex;
+        align-items: center;
+        border-radius: 10px;
+        padding: 15px;
+        margin-bottom: 15px;
+        cursor: pointer;
+        border-radius: 15px;
+        border: 2px solid rgba(255, 217, 1, 0.274);
+        box-shadow: 7px 7px 25px rgba(0, 0, 0, 0.158);
+        background-color: white;
+        transition: transform 0.1s ease, box-shadow 0.1s ease;
+    }
+    
+    .buyerCard:active {
+        transform: translateY(5px);
+        box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.2);
+    }
+    
+    .buyerImage {
+        width: 75px;
+        height: 70px;
+        border-radius: 50%;
+        margin-right: 15px;
+    }
+    
+    .buyerInfo {
+        flex-grow: 1;
+        margin: auto 0;
+    }
+    
+    .buyerInfo h4 {
+        margin: 0;
+        font-size: 16px;
+    }
+    
+    .buyerInfo p {
+        margin: 5px 0 0;
+        font-size: 12px;
+    }
+    
+    .buyerDistance {
+        font-size: 13px;
+    }

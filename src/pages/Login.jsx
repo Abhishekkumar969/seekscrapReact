@@ -15,10 +15,10 @@ function Login() {
     const [verifying, setVerifying] = useState(false);
     const [otp, setOtp] = useState(["", "", "", ""]);
     const [showResend, setShowResend] = useState(false);
+    const [name, setName] = useState("");
     const navigate = useNavigate();
 
     const generateOtp = () => Math.floor(1000 + Math.random() * 9000).toString();
-
 
     useEffect(() => {
         const user = JSON.parse(localStorage.getItem("user"));
@@ -27,15 +27,14 @@ function Login() {
         }
     }, [navigate]);
 
-
     const sendOtp = async () => {
-        if (!role || !phone) return alert("Please select role and enter phone");
+        if (!role || !phone) return alert("Please enter name and phone number");
 
         const generatedOtp = generateOtp();
         const docRef = doc(db, role, phone);
 
         try {
-            await setDoc(docRef, { phone, role, otp: generatedOtp });
+            await setDoc(docRef, { phone, role, name, otp: generatedOtp });
             alert(`Your OTP is ${generatedOtp}`);
             setStep("otp");
 
@@ -98,12 +97,10 @@ function Login() {
                 setShowResend(true);
                 return;
             }
-
-            const data = docSnap.data(); // 👈 Now data is defined here!
+            const data = docSnap.data();
 
             if (data.otp === enteredOtp) {
-                // 👉 Store user state
-                const userData = { phone, role };
+                const userData = { phone, role, name: data.name || "" };
                 localStorage.setItem("user", JSON.stringify(userData));
                 navigate(`/${role}`);
             } else {
@@ -119,14 +116,10 @@ function Login() {
         setVerifying(false);
     };
 
-
-
     return (
         <div className={styles.container}>
             <button className={styles.helpButton}>Help</button>
-
             <img src={logo} alt="SeekScrap Logo" className={styles.logo} />
-
             {role === "" && (
                 <>
                     <h2 className={styles.subtitle}>Choose your category</h2>
@@ -151,21 +144,30 @@ function Login() {
                         onClick={() => setRole("collector")}
                     >
                         <img src={collectorIcon} alt="Collector" className={styles.icon} />
-                        Collector
+                        Vendor
                     </button>
 
                     <div className={styles.hintBox}>
                         <p><strong>Hint:</strong></p>
                         <p><strong>Seller:</strong> List your scrap materials to find buyers.</p>
                         <p><strong>Buyer:</strong> Purchase scrap from sellers.</p>
-                        <p><strong>Collector:</strong> Manage scrap materials.</p>
+                        <p><strong>Vendor:</strong> Manage scrap materials.</p>
                     </div>
                 </>
             )}
 
             {role !== "" && step === "input" && (
                 <div className={styles.inputContainer}>
-                    <h2 className={styles.subtitle}>Type your phone number</h2>
+                    <h2 className={styles.subtitle}>Enter your name and phone number</h2>
+                    <div className={styles.phoneContainer}>
+                        <input
+                            type="text"
+                            placeholder="Your Name"
+                            value={name}
+                            onChange={(e) => setName(e.target.value)}
+                            className={styles.nameInput}
+                        />
+                    </div>
                     <div className={styles.phoneContainer}>
                         <span className={styles.countryCode}>+91</span>
                         <input

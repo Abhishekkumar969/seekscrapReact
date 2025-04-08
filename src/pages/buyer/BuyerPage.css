@@ -1,0 +1,165 @@
+/* BuyerPage.css */
+
+.buyerPageContainer {
+    background-color: #F5F5F5;
+    min-height: 100vh;
+}
+
+.buyerHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(180deg, #f3d06d 20%, #efbc41 80%);
+    padding: 15px;
+}
+
+.menuButton {
+    background: none;
+    border: none;
+    color: white;
+}
+
+.switchContainer {
+    display: flex;
+    align-items: center;
+}
+
+.incomeCard {
+    background-color: white;
+    padding: 5px 10px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.incomeCard .amount {
+    color: #08776E;
+    font-weight: bold;
+}
+
+.incomeCard .label {
+    font-size: 12px;
+}
+
+.topBuyerCard {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #FFC107;
+    padding: 15px;
+    border-radius: 10px;
+    margin: 10px;
+}
+
+.topBuyerCard .info {
+    font-weight: bold;
+}
+
+.topBuyerCard .wonAmount {
+    font-size: 20px;
+    color: #D32F2F;
+}
+
+.customerListHeading {
+    text-align: center;
+    background-color: #08776E;
+    padding: 10px 20px;
+    color: white;
+    border-radius: 15px;
+    width: fit-content;
+    margin: 20px auto;
+}
+
+.customerListWrapper {
+    padding: 0 10px;
+    padding-bottom: 80px;
+}
+
+.customerCard {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    padding: 15px;
+    border-radius: 10px;
+    margin: 15px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    height: 70px;
+}
+
+.customerImage {
+    width: 50px;
+    height: 50px;
+    border-radius: 25px;
+    margin-right: 15px;
+}
+
+.customerDetails {
+    flex: 1;
+}
+
+.acceptButton {
+    background-color: #08776E;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 5px;
+    border: none;
+    font-weight: bold;
+}
+
+.inactiveMessage {
+    text-align: center;
+    margin-top: 100px;
+}
+
+.inactiveMessage p {
+    color: red;
+}
+
+
+/*  */
+
+.switchContainer {
+    display: flex;
+    align-items: center;
+}
+
+.switchLabel {
+    color: white;
+    margin: 0 5px;
+}
+
+.customSwitch .MuiSwitch-root {
+    width: 50px;
+    height: 25px;
+    padding: 0;
+    display: flex;
+}
+
+.customSwitch .MuiSwitch-switchBase {
+    padding: 2px;
+    transition-duration: 300ms;
+}
+
+.customSwitch .Mui-checked {
+    transform: translateX(24px);
+    color: #4caf50;
+}
+
+.customSwitch .Mui-checked+.MuiSwitch-track {
+    background-color: #ffffff;
+    opacity: 1;
+}
+
+.customSwitch .MuiSwitch-thumb {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+.customSwitch .MuiSwitch-track {
+    border-radius: 28px;
+    background-color: red;
+    opacity: 1;
+    transition: all 0.3s ease;
+}
