@@ -1,16 +1,46 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Switch } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import buyerImg from '../../assets/images/buyer.png'; // Adjust the path as necessary
 import sellerImg from '../../assets/images/seller.png';
 
-
 const BuyerPage = () => {
     const navigate = useNavigate();
-    const [isEnabled, setIsEnabled] = useState(true);
+    const [isEnabled, setIsEnabled] = useState(() => {
+        const hour = new Date().getHours();
+        return hour >= 6 && hour < 18; // Auto ON between 6 AM and 6 PM
+    });
+    const userToggled = useRef(false);
 
-    const toggleSwitch = () => setIsEnabled(prev => !prev);
+    const toggleSwitch = () => {
+        setIsEnabled(prev => !prev);
+        userToggled.current = true;
+    };
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            const hour = new Date().getHours();
+
+            // Only auto-toggle if the user hasn't changed it manually
+            if (!userToggled.current) {
+                if (hour >= 6 && hour < 18) {
+                    setIsEnabled(true);
+                } else {
+                    setIsEnabled(false);
+                }
+            }
+
+            // Reset user override daily at 6 AM
+            if (hour === 6) {
+                userToggled.current = false;
+            }
+
+        }, 300000); // Check every 5 minutes
+
+        return () => clearInterval(interval);
+    }, []);
+
 
     const customers = [
         { id: '1', name: 'Myung Philippe', distance: '1 m' },
